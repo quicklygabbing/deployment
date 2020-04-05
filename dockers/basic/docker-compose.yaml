@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  quicklygabbing-ubuntu-basic-image:
+    image: quicklygabbing-ubuntu-basic-image
+    ports:
+      - '61022:22'
+    build:
+      context: .
+      dockerfile: Dockerfile
