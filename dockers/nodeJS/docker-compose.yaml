@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  quicklygabbing-ubuntu-react-js-image:
+    image: quicklygabbing-ubuntu-react-js-image
+    ports:
+      - '61022:22'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./www:/home/ubuntu/www:rw
