@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  quicklygabbing-laravel-nginx:
+    image: nginx:latest
+    hostname: www.quicklygabbing.lc
+    ports:
+      - '61080:81'
+    volumes:
+      - ./configs/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./configs/nginx/http/www.quicklygabbing.lc:/etc/nginx/sites-enabled/01-http.conf
+      - ./log:/var/log/nginx
+      - ./www/public:/home/quicklygabbing/www:ro
+    depends_on:
+      - quicklygabbing-laravel-fpm
+  quicklygabbing-laravel-fpm:
+    image: quicklygabbing-laravel-fpm
+    hostname: quicklygabbing-laravel-fpm
+    build:
+      context: .
+      dockerfile: php7.2.Dockerfile
+    volumes:
+      - ./www/public:/home/quicklygabbing/www:rw
