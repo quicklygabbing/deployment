@@ -1,4 +1,4 @@
-# Docker Basic Image
+# Node.JS Image
 
 _Describes deployment process of NODE.JS image from Ubuntu with the ubuntu user._
 

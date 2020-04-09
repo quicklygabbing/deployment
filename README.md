@@ -20,3 +20,8 @@ Describes deployment process of PHPInfo image with Nginx and PHP7.4-FPM
 
 - Create Laravel sceleton with initProject
 - Describes deployment process of PHP Laravel code.
+
+**5. Node.JS**
+
+Describes deployment process of NODE.JS image from Ubuntu with the ubuntu user
+
