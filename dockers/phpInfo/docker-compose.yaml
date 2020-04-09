@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  quicklygabbing-phpinfo-nginx:
+    image: nginx:latest
+    hostname: www.quicklygabbing.lc
+    ports:
+      - '61080:80'
+      - '61081:81'
+    volumes:
+      - ./configs/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./configs/nginx/http/www.quicklygabbing.lc:/etc/nginx/sites-enabled/01-http.conf
+      - ./log:/var/log/nginx
+  quicklygabbing-phpinfo-fpm:
+    hostname: quicklygabbing-phpinfo-fpm
+    image: php:7.4-fpm
+    volumes:
+      - ./www:/home/quicklygabbing/www:ro
