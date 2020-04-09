@@ -15,3 +15,8 @@ Describes deployment process of basic image with docker from ubuntu with the ubu
 **3. PHPInfo**
 
 Describes deployment process of PHPInfo image with Nginx and PHP7.4-FPM
+
+**4. Laravel**
+
+- Create Laravel sceleton with initProject
+- Describes deployment process of PHP Laravel code.
