@@ -1,0 +1,23 @@
+server {
+    listen 81;
+    listen [::]:81;
+
+    root /home/quicklygabbing/www;
+    index index.php;
+    server_name www.quicklygabbing.lc;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass   quicklygabbing-phpinfo-fpm:9000;
+        fastcgi_index  index.php;
+        include fastcgi_params;
+        fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    }
+
+    location ~ \.css$ {}
+    location ~ \.js$ {}
+    sendfile off;
+}
