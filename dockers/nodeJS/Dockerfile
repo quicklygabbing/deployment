@@ -23,17 +23,6 @@ RUN cd /tmp \
 # Setup Gatsbyjs
 #
 && yarn global add gatsby-cli \
-&& mkdir test \
-&& cd test \
-&& yarn add edit-json-file \
-&& yarn add home-path \
-&& echo 'var getHomePath = require('home-path');' | cat  >> app.js \
-&& echo 'const editJsonFile = require("edit-json-file");' | cat >> app.js \
-&& echo 'console.log(getHomePath()+`/.config/gatsby/config.json`);' | cat >> app.js \
-&& echo 'let file = editJsonFile(getHomePath()+`/.config/gatsby/config.json`);' | cat >> app.js \
-&& echo 'file.set("cli.packageManager", "yarn");' | cat >> app.js \
-&& echo 'file.save();' | cat >> app.js \
-&& cd /home/ubuntu \
 #
 # Clean apt
 #

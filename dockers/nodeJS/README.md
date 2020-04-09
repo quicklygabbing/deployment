@@ -9,7 +9,7 @@ Example:
 $ ssh -o "StrictHostKeyChecking no" -i ./ubuntuSSH_rsa -p 61022 ubuntu@localhost
 ````
 
-## Install Gatsby
+## Initializing Gatsby template
 
 Goto into SSH to run docker
 ````
