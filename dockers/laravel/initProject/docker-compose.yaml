@@ -1,13 +1,21 @@
 version: '3'
 
 services:
-  quicklygabbing-laravel-blog-init:
+  quicklygabbing-laravel-laravel-blog-init:
     image: quicklygabbing-laravel-blog-init
     build:
       context: .
       dockerfile: php7.2.Dockerfile
     volumes:
       - ./www:/home/quicklygabbing/www
-      - ./scrypt/init.sh:/init.sh
+      - ./scrypt/laravel.sh:/init.sh
     command: "/init.sh"
-#    command: "rm -rf *; composer create-project --prefer-dist laravel/laravel blogOD"
+  quicklygabbing-laravel-lumen-blog-init:
+    image: quicklygabbing-laravel-blog-init
+    build:
+      context: .
+      dockerfile: php7.2.Dockerfile
+    volumes:
+      - ./www:/home/quicklygabbing/www
+      - ./scrypt/lumen.sh:/init.sh
+    command: "/init.sh"
